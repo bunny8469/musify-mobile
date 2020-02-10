@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Musify</title>
+        <!--❌You can copy the code but you should not make it public. Thats a deal.❌
+-->
+        <link href="https://fonts.googleapis.com/css?family=Grenze|Mansalva|Oswald|PT+Sans|Pacifico|Ubuntu&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css"> <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+       <style>
+/*❌You can copy the code but you should not make it public. Thats a deal.❌
+
+cre 
+*/
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans|Montserrat|Muli|Open+Sans|Raleway|Roboto+Slab&display=swap');
+body {
+    background-color:#101010;
+    margin:0;
+    padding:0;
+    max-height:100vh;
+    transition:0.4s;
+}
+#likesongs,#search-div,#profile-div{
+    display:none;
+    overflow:scroll;
+}
+.fa-heart{
+    display:none;
+    color:white;
+    position:absolute;
+    top:20px;
+    right:60px;
+    transform:scale(1.6);
+    color:orange;
+}
+#fs{
+    display:block;
+}
+#main{
+    display:none;
+}
+header{
+    display:flex;
+    position:fixed;
+    height:70px;
+    width:100%;
+    color:white;
+    align-items:center;
+    justify-content:center;
+    font-size:250%;
+    background-color:#151515;
+    font-family:"Pacifico";
+    z-index:5;
+}
+.fa-music{
+    color:orange;
+    margin-right:10px;
+}
+.fa-cog{
+    position:absolute ;
+    color:white;
+    right:10px;
+    transform:scale(0.6);
+}
+.foot:active{
+    background-color:#303030;
+}
+footer{
+    height:50px;
+    width:100%;
+    background-color:#151515;
+    position:fixed;
+    bottom:0;
+    color:white;
+    font-family:"ubuntu";
+    display:flex;
+}
+.foot{
+    width:25%;
+    height:100%;
+    text-align:center;
+    padding-top:7px;
+    border-right:1px solid black;
+    position:relative ;
+}
+.fa-home{
+    transform:scale(1.3);
+    margin-bottom:5px;
+    color:orange;
+}
+#foot-3{
+    transform:scale(1.3);
+    color:white;
+    display:block;
+    position:absolute;
+    top:7px;
+    right:42%;
+}
+#foot-2{
+    transform:scale(1.3);
+    margin-bottom:5px;
+    color:white;
+}
+.fa-user{
+    transform:scale(1.3);
+    color:white;
+    margin-bottom:5px;
+}
+#wallpaper{
+    height:50px;
+    width:50px;
+    border-radius:25px;
+    position:absolute;
+    top:4px;
+}
+#song{
+    display:flex;
+    position:relative;
+    top:0px;
+    height:60px;
+    width:100%;
+}
+.fa-play{
+    color:;
+    position:absolute;
+    right:20px;
+    transform:scale(1.6);
+    top:20px;
+}
+#fs{
+    display:flex;
+    height:100vh;
+    width:100%;
+    justify-content:center ;
+    align-items:center;
+}
+#fsm{
+    transform:scale(5);
+    border:1px solid orange;
+    border-radius:50%;
+    padding:5px;
+    background-color:#111;
+    animation-name:rotate;
+    animation-duration:2s;
+    animation-iteration-count:infinite;
+    animation-timing-function:;
+}
+.name{
+    color:white;
+    position:absolute ;
+    font-family:"pt sans";
+    left:65px;
+    top:5px;
+    font-size:130%;
+}
+.artist{
+    color:#ddd;
+    position:absolute;
+    font-family:"ubuntu";
+    font-size:90%;
+    top:32px;
+    left:65px;
+}
+#songs{
+    width:100%;
+    height:auto;
+}
+.covers{
+    height:70px;
+}
+.fa-pause{
+    display:none;
+    color:orange;
+    position:absolute;
+    right:20px;
+    padding-left:10px;
+    transform:scale(1.6);
+    top:20px;
+}
+/*.fa-stop{
+    display:none;
+    color:orange;
+    position:absolute;
+    right:70px;
+    padding-left:50px;
+    transform:scale(1.5);
+    top:20px;
+}*/
+@keyframes rotate{
+    50%{
+        transform:scale(2.5);
+    }
+    100%{
+        transform:scale(5);
+    }
+}
+#setting{
+    height:80vh;
+    width:80%;
+    margin-top:10vh;
+    margin-bottom:10vh;
+    margin-left:10%;
+    margin-right:10%;
+    display:none;
+    z-index:10;
+    border-radius:30px;
+    background-color:white;
+    position:absolute;
+    overflow:scroll;
+}
+#setting-head{
+    height:70px;
+    width:100%;
+    text-align:center;
+    background-color:#eee;
+    font-size:200%;
+    padding-top:10px;
+    font-family:"pacifico";
+    border-radius:30px 30px 0 0;
+}
+#goBack{
+    position:absolute;
+    padding:10px;
+    left:10px;
+    color:black;
+    font-size:100%;
+}
+#goBack:active{
+    background-color:#ddd;
+}
+#color-head{
+    font-family:"pt sans";
+    font-size:130%;
+    margin-top:10px;
+    font-weight:bold;
+    margin-left:10px;
+}
+.color{
+    width:60px;
+    height:60px;
+    border-radius:30px;
+    border:1px solid #eee;
+    position:absolute;
+    margin:5px;
+}
+.c1{
+    background-color:orange;
+    left:15px;
+}
+.c2{
+    background-color:#28B858;
+    left:80px;
+}
+.c3{
+    background-color:#3498db;
+    left:145px;
+}
+.c4{ 
+    background-color:#ffff00;
+    left:210px;
+}
+.c5{
+    background-color:#FF7BDD;
+    left:15px;
+    top:180px;
+}
+#songs{
+    overflow:scroll;
+}
+#songs-heading,#lshead,#sehead{
+    font-family:"ubuntu";
+    color:white;
+    margin-left:5px;
+    font-size:150%;
+    margin:10px;
+    font-weight:bold;
+}
+.far{
+    color:white;
+    position:absolute;
+    top:20px;
+    right:60px;
+    transform:scale(1.6);
+    font-weight:lighter ;
+    display:block;
+    color:orange;
+}
+.song-loadr{
+  position:absolute ;
+  left:15px;
+  top:18px;
+  border: 2px solid #151515;
+  border-radius: 50%;
+  border-top: 2px solid  white;
+  border-bottom:2px solid white;
+  width:30px;
+  height: 30px;
+   animation: spin 1s linear infinite;
+}
+@-webkit-keyframes spin {
+0% {
+-webkit-transform: rotate(0deg);
+}
+  100% { 
+  -webkit-transform:
+  rotate(360deg); 
+  }
+}
+.comes{
+    font-family:"mansalva";
+    font-size:170%;
+    text-align:center;
+    position:absolute;
+    bottom:130px;
+    left:10px;
+}
+#songFull{
+    display:none;
+    max-height:100vh;
+    overflow:hidden;
+    text-align:center;
+}
+.fwall{
+    position:absolute;
+    top:15vh;
+    left:17.5vw;
+    width:65vw;
+    height:54vh;
+    z-index:2;
+}
+.fcwall{
+    filter:blur(40px);
+    width:65vw;
+    height:50vh;
+    margin-top:5vw;
+}
+.fhead{
+    display:flex;
+    height:15vh;
+    width:100%;
+    color:white;
+    align-items:center;
+    justify-content:center;
+    font-size:250%;
+    background-color:#151515;
+    font-family:"Pacifico";
+    z-index:3;
+}
+.fa-arrow-left{
+    position:absolute;
+    top:8px;
+    padding:10px;
+    left:10px;
+    font-size:90%;
+    color:white;
+}
+#lstext{
+    font-family:"ubuntu";
+    font-size:150%;
+    position:absolute;
+    top:30vh;
+    left:30vw;
+    color:white;
+}
+.fa-minus-circle{
+    color:orange;
+    transform:scale(1.6);
+    position:absolute;
+    top:20px;
+    right:60px;
+}
+.fsong{
+    border-radius:50%;
+    font-size:115%;
+    color:white;
+    font-family:"Raleway";
+    font-weight:bold;
+}
+.fartist{
+    font-size:105%;
+    font-family:"Muli";
+    color:#ccc;
+}
+.fa-step-backward,.fa-step-forward{
+    position:absolute;
+}
+.fa-ellipsis-v{
+    position:absolute;
+    top:20px;
+    transform:scale(0.7);
+    right:20px;
+}
+/*.transcov{
+    height:100vh;
+    width:100vw;
+    display:none;
+    z-index:10;
+    position:fixed;
+    top:0;
+    left:0;
+}
+.gotit{
+    color:white;
+    background-color:#0000dd;
+    width:100px;
+    font-family:"open sans";
+    height:25px;
+    padding:10px;
+    font-size:130%;
+    position:fixed;
+    top:70%;
+    left:65%;
+    text-align:center;
+}*/
+.song-loader{
+    display:none;
+}
+.search-box{
+    position:absolute;
+    top:50%;
+    left:50%;
+    height:40px;
+    border-radius:40px;
+    display:flex;
+    transform:translate(-50%,-50%);
+    align-items:center;
+    padding:5px 0 5px 0;
+    background-color:#101010;
+}
+.search-btn{
+    float:right;
+    font-size:115%;
+    transition:0.4s;
+    height:50px;
+    width:50px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    font-weight:lighter;
+}
+.search-txt{
+    border:none;
+    background:none;
+    outline:none;
+    padding:0;
+    color:white;
+    transition:0.4s;
+    line-height:40px;
+    width:0px;
+}
+#setext{
+    font-family:"ubuntu";
+    font-size:130%;
+    position:absolute;
+    top:70vh;
+    left:15vw;
+    color:white;
+}
+#sehead{
+    text-align:center;
+    text-decoration:underline;
+}
+#search-songs{
+    display:none;
+    width:100%;
+    background-color:#101010;
+    height:auto;
+    position:absolute;
+    top:60vh;
+    overflow:scroll;
+}
+.stranscov{
+    width:100%;
+    z-index:10;
+    height:100%;
+}
+.slider{
+    width:80vw;
+    position:absolute;
+    height:5px;
+    left:10vw;
+    -webkit-appearance:none;
+    bottom:18vh;
+    background-color:#222;
+    outline:none;
+    -webkit-transition:0.2s;
+    transition:opacity 0.2s;
+    border-radius:5px;
+}
+.slider::-webkit-slider-thumb{
+    background-color:white;
+    -webkit-appearance:none;
+    height:15px;
+    width:15px;
+    border-radius:50%;
+}
+.sib{
+    position:absolute;
+    height:10vh;
+    border-top:1px solid black;
+    border-bottom:1px solid black;
+    width:100%;
+    padding-left:10px;
+    padding-right:10px;
+    color:#555;
+    font-family:"open sans";
+}
+.sib1{
+    top:270px;
+}
+.sib2{
+    top:calc(10vh + 270px);
+    border-top:none;
+}
+.sib span a{
+    font-family:"pt sans";
+    font-size:120%;
+    font-weight:bolder;
+    color:lightSkyBlue;
+    margin:2px;
+}
+       </style>
+    </head>
+    <body onload="ready()" id="body">
+    <div id="songFull">
+        <!-- in JS -->
+    </div>
+<!--    <div id="transcov" class="transcov">
+    <div class="gotit" onclick="gotit()">OK! Got it </div>
+    </div> -->
+    <div id="setting">
+    <div id="setting-head"><i class="fas fa-arrow-left" id="goBack" onclick="goBack('setting')"></i>Settings</div>
+                <div id="colors">
+                <div id="color-head">Change Color</div>
+                    <div class="color c1" id="color-orange" onclick=changeColor("orange")></div>
+                    <div class="color c2" id="color-#28B858" onclick=changeColor("#28B858")></div>
+                    <div class="color c3" id="color-#1868C0" onclick=changeColor("#3498db")></div>
+                    <div class="color c4" id="color-#ffff00" onclick=changeColor("#ffff00")></div>
+                    <div class="color c5" id="color-#FF7BDD" onclick=changeColor("#FF7BDD")></div>
+              <!--      <div class="comes">Still to be Coming soon. </div>-->
+              <div class="sib sib1">
+                  <span><a href="https://code.sololearn.com/WW7WW5FiPRlm/?ref=app">Personalise</a></span><br>
+                Add your own songs on Musify
+              </div>
+              <div class="sib sib2">
+             <span><a href="https://code.sololearn.com/W0245V7HiHZU/?ref=app">User Manual
+            </a></span> <br>Know the features, uses of Musify   </div>
+                </div>
+           </div>
+<!--https://kahimyang.com/resources/sound/click.mp3-->
+    <audio id="audio" src="https://raw.githubusercontent.com/aosp-mirror/platform_frameworks_base/master/data/sounds/effects/Effect_Tick.ogg" autoplay="false" ></audio> 
+    <div id="fs"><i class="fas fa-music" id="fsm"></i></div>
+    <div id="main" class="main">
+        <header><div class="song-loadr"></div><i class="fas fa-music" id="icon-head"></i> Musify<i class="fas fa-cog" id="settings" onclick="settings()"></i>
+            
+        </header>
+        <div id="songs">
+            <div class=covers ></div>
+            <div id="playlists"></div>
+            <div id="songs-heading">Recommended for you</div>
+         <!--   <div id=song>
+            <img src="https://image.redbull.com/rbcom/010/2014-01-15/1331628094217_3/0100/0/1/girl-power-comes-to-stunt-biking.jpg" id="wallpaper">
+               <div class="name">Song_name</div>
+               <div class="artist">Song_Artist</div>
+               <i class="fas fa-play" onclick="playDefault()"></i>
+               <i class="fas fa-pause" onclick="pauseDefault()"></i>
+               <i class="far fa-heart" id="unliked"  onclick="like()"></i>
+          
+           </div>-->
+       </div>
+           <div id="search-div">
+               <div class="covers"></div>
+               <div id="sehead">Search</div>
+               <div class="search-box" id ="search-box">
+                   <input id="search-txt" class="search-txt" type="text" placeholder="Search Songs...." name = "searchSongs" onkeyup="searchForSong()">
+                   <button id="search-but" onclick = "searchForSong()" class="search-btn"><i class="fas fa-search"></i></button>
+               </div>
+               <div id="search-songs"></div>
+               <div id="setext">Tap on the search button <i class="fas fa-search"></i></div>
+           </div>
+           <div id="likesongs"><div class="covers"></div></div>
+           <div id="profile-div"></div>
+        <footer>
+            <div class="foot home" id="home" onclick="foot(1);home();"><i class="fas fa-home" id="foot-1"></i><br /> Home</div>
+            <div class="foot search" id="search" onclick="foot(2);showSearchDiv();"><i class="fas fa-search" id="foot-2"></i><br />Search</div>
+            <div class="foot heart" id="heart" onclick="foot(3);displayLikedSongs ()"><i class="fas fa-heart" id="foot-3"></i><br /> <span style="position:absolute;top:28px;left:2px;"><center>Liked Songs</center></span></div>
+            <div class="foot user" id="user" onclick="foot(4);settings()"><i class="fas fa-user" id="foot-4"></i><br /> Profile</div>
+        </footer> 
+        </div>
+    <script type="text/javascript">
+    "use strict"
+    function id(x){
+    return document.getElementById(x)
+}
+
+function click(){
+    var sound=document.getElementById("audio");
+    sound.play();
+}
+function ready(){
+    alert("Thanks for your patience")
+    id("main").style="display:block;"
+    id("fs").style="display:none;"
+    makeLikedSongsList()
+   // tut("settings")
+   // tut("hplay-1")
+}
+var all_color="orange"
+function settings(){
+    document.getElementById("main").style.display="none"
+    document.body.style.background=all_color
+    document.getElementById ("setting").style.display="block"
+    click();
+}
+
+function goBack(x){
+click();
+bk2NrmlSrch()
+document.getElementById("main").style.display="block"
+    document.body.style.background="#101010"
+    document.getElementById (x).style.display="none"
+    is_full = "false"
+}
+
+var active=1
+function foot(x){
+    bk2NrmlSrch()
+   var id_foot = "foot-"+x;
+    if(x==1){
+        id("foot-2").style.color="white";
+        id("foot-3").style.color="white";
+        id("foot-4").style.color="white"
+        id("foot-1").style.color=all_color
+        active=1
+    }
+    else if(x==2){
+        id("foot-1").style.color="white";
+        id("foot-3").style.color="white";
+        id("foot-4").style.color="white"
+        id("foot-2").style.color=all_color
+        active=2
+    }
+    else if(x==3){
+        id("foot-1").style.color="white";
+        id("foot-3").style.color=all_color;
+        id("foot-4").style.color="white"
+        id("foot-2").style.color="white"
+        active=3
+    }
+    click();
+    checkTab()
+}
+function remove_duplicates(arr) {
+     var obj = {}; 
+     var ret_arr = []; 
+     for (var i = 0; i < arr.length; i++)  {
+          obj[arr[i]] = true; 
+     } 
+     for (var key in obj) { 
+         ret_arr.push(key); 
+     } 
+ return ret_arr; 
+ }
+var songDefault;
+var index;
+function createSong(x,y,z,w){
+    index = song_names.indexOf(y);
+    var songe = "audio-"+index
+    songDefault = document.createElement('div');
+      songDefault.id="song"
+      songDefault.innerHTML = ` <img src=${w} id="wallpaper" /*onclick=stop(${index})*/>
+               <div class="name" onclick=songfs(${index})>${y}</div>
+               <div class="artist" onclick=artistfs(${index})>${z}</div>
+               <i class="fas fa-play" id=hplay-${index} onclick=play(${index}) style=color:${all_color};></i>
+               <i class="fas fa-pause" id=hpause-${index} style=color:${all_color}; onclick=pause(${index})></i>    
+              <i class="far fa-heart" id=unliked-${index} onclick=like(${index})></i> 
+              <i class="fas fa-heart" id=liked-${index} onclick=unlike(${index})></i>
+           //<div class="song-loader" id=song-loader-${index} ></div>
+               <audio id=haudio-${index} src=${x} autoplay ="false" onload=songReady(${index})></audio>`
+               
+}
+function playDefault(){
+    alert("Come on. It is a Default one")
+}    
+        var song_links = [];
+        var song_names = [];
+        var song_artists = [];
+        var song_wallpapers = [];
+        var song_review = [];
+        var likedSongs = [];
+        var search;
+
+//x Link
+//y name
+//z artist
+//w wallpaper
+
+var number = 0
+function addSong(x,y,z,w){
+    number+=1
+    song_links.push(x);
+    song_names.push(y);
+    song_artists.push(z);
+    song_wallpapers.push(w);
+    song_review.push("unliked");
+    createSong(x,y,z,w)
+      var div = id("songs")
+      div.appendChild(songDefault)
+}
+
+function makeLikedSongsList(){
+    var index_ls = -1
+    var count = 0
+    likesongs.innerHTML="<div class=covers></div><div id=lshead>Liked Songs</div>"
+    likedSongs=[]
+    for(var i=0;i<number;i++){
+        if(song_review[i]=="liked"){ 
+            likedSongs.push(i)
+            index_ls+=1
+            count+=1
+            var x = song_links[i]
+            var y = song_names[i]
+            var z = song_artists[i]
+            var w = song_wallpapers[i]
+           var likesongDefault = document.createElement('div');
+      likesongDefault.id="song"
+      likesongDefault.innerHTML = ` <img src=${w} id="wallpaper" /*onclick=stop(${index})*/>
+               <div class="name" onclick=songfs(${i})>${y}</div>
+               <div class="artist" onclick=artistfs(${i})>${z}</div>
+               <i class="fa fa-minus-circle" id=removeFromLs-${i} onclick=removeFromLs(${i}) style=color:${all_color};></i>
+               <i class="fas fa-play" id=lplay-${i} onclick=play(${i}) style=color:${all_color};></i>
+               <i class="fas fa-pause" id=lpause-${i} style=color:${all_color}; onclick=pause(${i})></i>    
+             /* <div class="song-loader" id=song-loader-${index} style=border-top-color:${all_color};border-bottom-color:${all_color};</div>*/
+               <audio id=laudio-${i} src=${x} autoplay ="false" onload=songReady(${index})></audio>`
+            var playnm = i+"-true"
+            var div = id("likesongs")
+            div.appendChild(likesongDefault)
+            if(is_playing == playnm){
+                var played = "lplay-"+i
+                var paused = "lpause-"+i
+                id(played).style.display="none"
+                id(paused).style.display = "block"
+            } 
+        }    
+    }
+    if(count==0){
+        id("likesongs").innerHTML="<div class='covers'></div><div id=lstext>No Liked Songs<br>Click on the ❤</div>"
+    }
+}
+function displayLikedSongs(){
+    id("songs").style.display="none"
+    id("likesongs").style.display="block"
+    id("search-div").style.display="none"
+    id("profile-div").style.display="none"
+    makeLikedSongsList()
+}
+function home(){
+    id("songs").style.display="block"
+    id("likesongs").style.display="none"
+    id("search-div").style.display="none"
+    id("profile-div").style.display="none"
+}
+
+/*function songReady(a){
+   var sl = "song-loader-"+a
+    id(sl).style.display = "none"
+}*/
+var sa;
+function checkTab(){
+    if(active==1){
+        sa="h"
+    }
+    else if(active == 2){
+        sa="s"
+    }
+    else if(active == 3){
+        sa="l"
+    }
+    else if(active == 4){
+        sa="u"
+    }
+}
+function like(a){
+    song_review[a] = "liked"
+    var likeName = "unliked-"+a
+    var unlikeName = "liked-"+a
+    id(likeName).style.display="none"
+    id(unlikeName).style.display="block"
+    var songnm = song_names[a]
+    var artistnm = song_artists[a]
+    makeLikedSongsList()
+}
+function unlike(a){
+    song_review[a] = "unliked"
+    var likeName = "unliked-"+a
+    var unlikeName = "liked-"+a
+    id(likeName).style.display="block"
+    id(unlikeName).style.display="none"
+    var songnm = song_names[a]
+    var artistnm = song_artists[a]
+    makeLikedSongsList()
+}
+function lsPlaySong(a){
+    var played = "lplay-"+a
+    var paused = "lpause-"+a
+    id(played).style.display="none"
+    id(paused).style.display="block"
+}
+function lsPauseSong(a){
+    var played = "lplay-"+a
+    var paused = "lpause-"+a
+    id(played).style.display="block"
+    id(paused).style.display="none"
+}
+function changeSong(x){
+    checkTab()
+    var song_index;
+    for(song_index=0;song_index<number;song_index++){
+        var audioName = "haudio-"+song_index
+        var played = "hplay-"+song_index
+        var paused = "hpause-"+song_index
+        id(played).style.display="block"
+        id(paused).style.display="none"
+        if(song_review[song_index]=="liked"){
+            var played = "lplay-"+song_index
+            var paused = "lpause-"+song_index
+            id(played).style.display="block"
+            id(paused).style.display ="none"
+        }
+        if (song_index == x){
+            id(audioName).pause()
+        }
+        else{
+            id(audioName).pause()
+            id(audioName).currentTime = 0
+        }
+    }
+}
+function removeFromLs(x){
+    unlike(x)
+    displayLikedSongs()
+}
+var is_playing;
+function play(a){
+    changeSong(a);
+    if(is_full == a+"-true"){
+         var playedf = "fplay-"+a
+         var pausedf = "fpause-"+a
+         id(playedf).style.display="none"
+         id(pausedf).style.display ="block"
+     }
+    var played = "hplay-"+a
+    var paused = "hpause-"+a
+    var stopped = "stop-"+a
+document.getElementById(played).style.display="none"
+    document.getElementById(paused).style.display="block"
+     is_playing = a+"-true"
+     checkTab()
+    if(song_review[a]=="liked"){
+         var played = "lplay-"+a
+         var paused = "lpause-"+a
+         id(played).style.display ="none"
+         id(paused).style.display ="block"
+     }    
+    var audio_name="haudio-"+a
+    var audio = document.getElementById(audio_name);
+    audio.play();
+    audio.addEventListener('ended',function(){ 
+         nextSong(a)
+     });
+}    
+function pause(a){
+    if(is_full == a+"-true"){
+         var playedf = "fplay-"+a
+         var pausedf = "fpause-"+a
+         id(playedf).style.display="block"
+         id(pausedf).style.display ="none"
+     }
+    var played = "hplay-"+a
+    var paused = "hpause-"+a
+    var stopped="stop-"+a
+    document.getElementById(played).style.display="block"
+    document.getElementById(paused).style.display="none"
+    is_playing = a+"-false"
+    checkTab()
+    var audio_name="haudio-"+a
+    if(song_review[a]=="liked"){
+         var played = "lplay-"+a
+         var paused = "lpause-"+a
+         id(played).style.display ="block"
+         id(paused).style.display ="none"
+     }
+    var audio = document.getElementById(audio_name);
+    audio.pause();
+}
+/*function stop(a){
+    var audio_name="audio-"+a
+    var played = "play-"+a
+    var paused = "pause-"+a
+    var stopped="stop-"+a
+    document.getElementById(played).style.display="block"
+    document.getElementById(paused).style.display="none"
+    var audio = document.getElementById(audio_name);
+    audio.pause();
+    audio.currentTime=0
+}*/
+var is_full;
+function songfs(x){
+    is_full = x+"-true"
+    var fwl = song_wallpapers[x]
+    var fsl = song_links[x]
+    var fsa = song_artists[x]
+    var fsn = song_names[x]
+    id("songFull").innerHTML=`
+    <div class="fhead"> 
+    <i class="fas fa-ellipsis-v" style=color:${all_color}; onclick=songMain(${x});></i>
+    <i class="fas fa-arrow-left" onclick=goBack('songFull') style=color:${all_color}; ></i><i style=color:${all_color} class="fas fa-music"></i>Musify</div>
+    <img src=${fwl} class="fcwall" id=fullWallc-${x}/>
+    <img src=${fwl} class="fwall" id=fullWall-${x}/>
+   <marquee class="fsong" direction="right" scrollamount="7" width="60%">${fsn}</marquee>
+    <div id=artist-${x} class="fartist">${fsa}</div>
+    <input type="range" id=progress-${x} class="slider" value="0">
+    <i class="fas fa-step-backward" onclick=previousSong(${x}) style=color:${all_color};transform:scale(3);bottom:10vh;left:20vw; ></i>
+      <i class="fas fa-step-forward" onclick=nextSong(${x}) style=color:${all_color};transform:scale(3);bottom:10vh;right:20vw;></i>
+    <i class="far fa-play-circle" id=fplay-${x} onclick=play(${x}) style=color:${all_color};transform:scale(4);top:88vh;right:47.5vw;></i>
+    <i class="far fa-pause-circle" id=fpause-${x} onclick=pause(${x}) style=color:${all_color};transform:scale(4);top:88vh;right:47.5vw;></i>
+   `
+      id("main").style.display="none"
+      id("songFull").style.display ="block"
+      play(x);
+      var audio_name="haudio-"+x     
+    var audio = document.getElementById(audio_name);
+      var progress=id("progress-"+x)
+      audio.addEventListener("timeupdate",function(){
+          progress.value = (audio.currentTime / audio.duration)*100
+      })
+      progress.oninput=function(){
+          var input = progress.value/100
+          var time = (input * audio.duration)
+          audio.currentTime = time
+      }      
+}
+function nextSong(x){
+    click()
+    if(x==number-1){
+        if(is_full == x+"-true"){
+            songfs(0)
+        }
+        else{
+            play(0)
+        }
+    }
+    else{
+        if (is_full == x+"-true"){
+            songfs(x+1)
+        }
+        else{
+            play(x+1)
+        }
+    }
+}
+function previousSong(x){
+    click()
+    if(x==0){
+        if(is_full == x+"-true"){
+            songfs(number-1)
+        }
+        else{
+            play(number-1)
+        }
+    }
+    else{
+        if (is_full == x+"-true"){
+            songfs(x-1)
+        }
+        else{
+            play(x-1)
+        }
+    }
+}
+function songMain(x){
+    
+}
+function changeColor(color){
+    all_color = color
+    document.body.style.background=color
+    id("search-but").style.backgroundColor = all_color 
+    id("search-but").style.borderColor = "black"
+    id("icon-head").style.color=all_color 
+    var foots = "foot-"+active
+    id(foots).style.color=all_color
+    var num;
+    for(num=0;num<number;num++){
+       var playName = "hplay-"+num
+       //var stopName = "stop-"+num
+       var pauseName = "hpause-"+num
+      var likeName = "unliked-"+num
+      var unlikeName ="liked-"+num
+      var sl = "song-loader-"+num
+        id(playName).style.color=all_color    
+        id(pauseName).style.color=all_color
+        id(likeName).style.color=all_color
+        id(unlikeName).style.color=all_color
+      //  id(sl).style.borderTopColor=all_color
+  //    id(sl).style.borderBottomColor=all_color
+        makeLikedSongsList();
+    }
+    return all_color
+}
+/*var understood = false;
+function tut(x){
+understood = false
+
+while(understood==false){
+ document.getElementById("transcov").style.display="block"
+ document.getElementById(x).style="border:5px green double;"
+ 
+}
+}
+function gotit(){
+    understood = true
+}*/
+function showSearchDiv(){
+    id("songs").style.display="none"
+    id("likesongs").style.display="none"
+    id("search-div").style.display="block"
+    id("profile-div").style.display="none"
+    id("search-but").style.backgroundColor=all_color
+    id("search-but").style.borderColor="black"
+    id("search-but").style.borderWidth="1px"
+    id("search-but").style.borderStyle="solid"
+}
+function searchForSong(){
+    id("search-songs").style.display="block"
+    id("sehead").style.display="none"
+    id("search-txt").style="width:170px;padding:0 6px;"
+    document.body.style.backgroundColor=all_color
+    id("setext").style.display="none"
+    addToSearch()
+}
+function addToSearch(){
+    id("search-songs").innerHTML = ""
+    id("search-songs").style.display = "block"
+    var input = id("search-txt").value
+    input = titleCase(input)
+   var len = input.length
+    if(input != ""){
+        var i;
+        for(i=0;i<number;i++){
+            var sngnm = song_names[i]
+            var artnm = song_artists[i]
+            var snglnk = song_links[i]
+            var sngwal = song_wallpapers[i]
+            if (input == sngnm){
+                var song = document.createElement("div")
+                song.id = "song"
+                song.innerHTML = ` <img src=${sngwal} id="wallpaper" /*onclick=stop(${index})*/>
+               <div class="name">${sngnm}</div>
+               <div class="stranscov" onclick=plays(${i})></div>
+               <div class="artist">${artnm}</div>
+               `
+                var div = id("search-songs")
+                div.appendChild(song)
+            }      //if 
+            else if(sngnm.indexOf(input) !== -1){
+                var song = document.createElement("div")
+                song.id = "song"
+                song.innerHTML = ` <img src=${sngwal} id="wallpaper" /*onclick=stop(${index})*/>
+               <div class="name">${sngnm}</div>
+               <div class="stranscov" onclick=plays(${i})></div>
+               <div class="artist">${artnm}</div>
+               `
+                var div = id("search-songs")
+                div.appendChild(song)
+            }
+        }     //for
+    }    //if
+}
+
+function plays(x){
+    play(x)
+    bk2NrmlSrch()
+    sweetAlert("Song is being played","You can go to the home screen","success");
+}
+function bk2NrmlSrch(){
+    id("search-txt").style="width:0px;padding:0px;"
+    document.body.style.backgroundColor="#101010"
+    id("setext").style.display="block"
+    id("sehead").style.display="block"
+    id("search-songs").style.display = "none"
+}
+function titleCase(str){ 
+    var splitStr = str.toLowerCase().split(' ');
+    for (var i = 0; i < splitStr.length; i++){ 
+    splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1); }
+    return splitStr.join(' '); 
+}
+function shuffleArray(array) { 
+for (var i = array.length - 1; i > 0; i--) { 
+    var j = Math.floor(Math.random() * (i + 1)); 
+    var temp = array[i];
+     array[i] = array[j]; 
+     array[j] = temp;
+  } 
+}
+function artistfs(){
+    
+}
+
+// Add your songs here. (Personalise)
+
+//x song-link
+//y song-name
+//z song-artist
+//w song-wallpaper
+
+/* Add your songs down here */
+
+addSong("https://dl.dropbox.com/s/x6f49cu1rdqnngu/Let%20Me%20Love%20You.mp3?dl=0",
+"Let Me Love You",
+"DJ Snake ft.Justin Bieber",
+"https://i3.sndcdn.com/avatars-000607078605-vn2n3y-t500x500.jpg");
+addSong("https://dl.dropbox.com/s/15mz8myz715oiqp/The%20Spectre.mp3",
+"The Spectre",
+"Alan Walker",
+"https://www-dance--charts-de.cdn.ampproject.org/ii/w1000/s/www.dance-charts.de/images/September_2017/Alan-Walker--The-Spectre.jpg")
+addSong("https://dl.dropbox.com/s/2xm5daawloncpye/Camila-Cabello-Liar-01.mp3",
+"Liar",
+"Camila Cabello",
+"https://www.glamsham.com/Uploads/article/camila-cabello-20190907124331992.jpg")
+addSong("https://dl.dropbox.com/s/dehnuj7tag239cs/Sabrina-Carpenter-In-My-Bed-01.mp3",
+"In My Bed",
+"Sabrina Carpenter",
+"https://data.whicdn.com/images/333047407/original.jpg?t=1563667836")
+addSong("https://dl.dropbox.com/s/9s1yylioh6l3gct/He%27s%20Soo%20Cute-Naasongs.fm.mp3",
+"He's So Cute [Telugu]",
+"MadhuPriya [Sarileru Neekevvaru]",
+"https://a10.gaanacdn.com/gn_img/song/koMWQ7BKqL/MWQv0M4Abq/size_l_1576493421.webp")
+addSong("https://dl.dropbox.com/s/ldv5h4uht2dvqbz/OneRepublic%20-%20Counting%20Stars.mp3",
+"Counting Stars",
+"OneRepublic",
+"https://f4.bcbits.com/img/a1876823782_16.jpg")
+addSong("https://dl.dropbox.com/s/e5y42cc90ugx09t/Believer.mp3?dl=0",
+"Believer",
+"Imagine Dragons",
+"https://i1.sndcdn.com/artworks-000371895354-2ckwgz-t500x500.jpg")
+addSong ("https://dl.dropbox.com/s/yk3po509rlaqe22/Faded.mp3",
+"Faded",
+"Alan Walker",
+"https://dl.dropbox.com/s/pm3073736ewl6m4/images-1.jpg")
+
+/*
+1. Song Link
+2. Song Name
+3. Song Artist
+4. Song Wallpaper
+
+*/
+id("songs").innerHTML += "<div class=covers></div>"
+/* Add your songs up here */
+
+    </script>
+    </body>
+</html>
