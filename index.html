@@ -326,8 +326,8 @@ footer{
     position:absolute;
     top:15vh;
     left:17.5vw;
-    width:65vw;
-    height:54vh;
+    width:70vw;
+    height:45vh;
     z-index:2;
 }
 .fcwall{
@@ -926,8 +926,8 @@ function songfs(x){
     <input type="range" id=progress-${x} class="slider" value="0">
     <i class="fas fa-step-backward" onclick=previousSong(${x}) style=color:${all_color};transform:scale(3);bottom:10vh;left:20vw; ></i>
       <i class="fas fa-step-forward" onclick=nextSong(${x}) style=color:${all_color};transform:scale(3);bottom:10vh;right:20vw;></i>
-    <i class="far fa-play-circle" id=fplay-${x} onclick=play(${x}) style=color:${all_color};transform:scale(4);top:88vh;right:47.5vw;></i>
-    <i class="far fa-pause-circle" id=fpause-${x} onclick=pause(${x}) style=color:${all_color};transform:scale(4);top:88vh;right:47.5vw;></i>
+    <i class="far fa-play-circle" id=fplay-${x} onclick=play(${x}) style=color:${all_color};transform:scale(3);bottom:10vh;right:47.5vw;></i>
+    <i class="far fa-pause-circle" id=fpause-${x} onclick=pause(${x}) style=color:${all_color};transform:scale(3);bottom:10vh;right:47.5vw;></i>
    `
       id("main").style.display="none"
       id("songFull").style.display ="block"
